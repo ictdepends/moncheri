@@ -30,13 +30,23 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Install Rust WASM target
+        run: rustup target add wasm32-unknown-unknown
+
+      - name: Install Trunk
+        run: cargo install trunk --locked
+
+      - name: Build Leptos frontend
+        working-directory: app
+        run: trunk build --release --public-url /moncheri/
+
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
       - name: Upload static site
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
-          path: app
+          path: app/dist
 
       - name: Deploy to GitHub Pages
         id: deployment
