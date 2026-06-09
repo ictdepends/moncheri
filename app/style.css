@@ -1,0 +1,44 @@
+:root {
+  color-scheme: light;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(13, 110, 253, 0.18), transparent 34rem),
+    linear-gradient(135deg, #f6f8fc 0%, #eef2f8 100%);
+}
+
+.mc-shell {
+  min-height: 100vh;
+}
+
+.mc-card {
+  max-width: 980px;
+  border: 1px solid rgba(13, 110, 253, 0.14);
+  box-shadow: 0 1.5rem 4rem rgba(20, 33, 61, 0.12);
+}
+
+.mc-mark {
+  width: 2.75rem;
+  height: 2.75rem;
+}
+
+.mc-title {
+  letter-spacing: -0.055em;
+}
+
+.mc-muted {
+  color: #5f6f89;
+}
+
+.mc-status {
+  background: #f8faff;
+  border: 1px solid #e1e8f5;
+}
+
+@media (max-width: 575.98px) {
+  .mc-card {
+    border-radius: 1.25rem;
+  }
+}
